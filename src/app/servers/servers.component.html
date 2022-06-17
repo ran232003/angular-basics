@@ -1,0 +1,24 @@
+<p>servers works!</p>
+<app-server></app-server>
+<button type="button" class="btn btn-lg btn-primary" (click)="change()" >changeStatus</button>
+<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" (input) = "onChange($event)">
+<p>{{test}}</p>
+<button type="button" [disabled] = "changeStatus" class="btn btn-outline-secondary">add server</button>
+<!-- <p *ngIf = "buttonStatus ; else elseBlock"> button works!</p>
+<p #elseBlock>button dosent work</p> -->
+<p *ngIf="buttonStatus; else elseBlock">button works</p>
+<ng-template #elseBlock><p>
+    button disable
+</p></ng-template>
+<p [ngStyle] = "{color:changeColor()}">if disable im red else im green</p>
+
+<button type="button" class="btn btn-lg btn-primary" (click)="addServer()" >Add server</button>
+<div *ngFor="let server of servers">
+<p>
+    {{server.name}}
+</p>
+<p>
+    {{server.id}}
+</p>
+</div>
+
