@@ -13,12 +13,15 @@
 <p [ngStyle] = "{color:changeColor()}">if disable im red else im green</p>
 
 <button type="button" class="btn btn-lg btn-primary" (click)="addServer()" >Add server</button>
-<div *ngFor="let server of servers">
+<div *ngFor="let server of servers;let i = index">
 <p>
     {{server.name}}
 </p>
 <p>
     {{server.id}}
+</p>
+<p>
+    {{i}}
 </p>
 </div>
 
